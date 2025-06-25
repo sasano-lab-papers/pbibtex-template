@@ -16,7 +16,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          path: |
+          pattern: |
             *.pdf
 
   publish:
@@ -26,6 +26,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/download-artifact@v4
+        with:
+          path: .
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
