@@ -16,7 +16,8 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          path: *.pdf
+          path: |
+            *.pdf
 
   publish:
     runs-on: ubuntu-latest
@@ -25,4 +26,5 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          files: *.pdf
+          files: |
+            *.pdf
